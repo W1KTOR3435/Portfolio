@@ -2,6 +2,7 @@
   "name": "Portfolio",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -30,6 +31,8 @@
     "eslint-plugin-vue": "^8.2.0",
     "prettier": "^2.5.1",
     "sass": "^1.52.3",
-    "sass-loader": "^10.2.1"
+    "sass-loader": "^10.2.1",
+    "vue-no-ssr": "^1.1.1",
+    "vue-particles": "^1.0.9"
   }
 }
