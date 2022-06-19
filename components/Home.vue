@@ -1,5 +1,5 @@
 <template>
-    <div class="body">
+    <div>
         Wiktor
     </div>
 </template>
@@ -11,9 +11,12 @@
 </script>
 
 <style lang="scss" scoped>
-.body{
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+@import '~/assets/scss/variables';
+.bg {
+  position: fixed;
+  height: 100%;
+  background-color: $royal;
+  top: 0px;
+  left: 0px;
 }
 </style>

@@ -1,42 +1,39 @@
 <template>
   <header>
     <nav>
-      <div>
-        <Nuxt-link to="/">
-          <img src="~/assets/logo.png" alt="logo" class="img" />
-        </Nuxt-link>
-      </div>
+      <Nuxt-link to="/" class="img-link">
+        <img src="~/assets/logo.png" alt="logo" class="img" />
+      </Nuxt-link>
       <ul v-show="!mobile" class="navigation">
-        <div>
-          <li>
-            <NuxtLink class="box" to="/">
-              <div class="btn btn-one">
-                <span>Home</span>
-              </div>
-            </NuxtLink>
-          </li>
-        </div>
-        <div>
-          <li>
-            <NuxtLink class="box" to="/contact">
-              <div class="btn btn-one">
-                <span>Contact</span>
-              </div>
-            </NuxtLink>
-          </li>
-        </div>
+        <li>
+          <NuxtLink class="box" to="/">
+            <div class="btn btn-one">
+              <span> Home </span>
+            </div>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="box" to="/contact">
+            <div class="btn btn-one">
+              <span> Contact </span>
+            </div>
+          </NuxtLink>
+        </li>
       </ul>
       <button
         v-show="mobile"
         class="hamburger"
         :class="{ 'hamburger--is-open': hamburgerOpen }"
         @click="
-          toggleMobileNav();
+          toggleMobileNav()
           hamburgerOpen = !hamburgerOpen
         "
-      ></button>
+      />
       <transition name="mobile-nav">
         <ul v-show="mobileNav" class="dropdown-nav">
+          <Nuxt-link to="/" class="img-link">
+            <img src="~/assets/logo.png" alt="logo" class="img-mobile" />
+          </Nuxt-link>
           <li>
             <NuxtLink class="btn-mobile" to="/"> Home </NuxtLink>
           </li>
@@ -57,17 +54,20 @@ export default {
       mobile: null,
       mobileNav: null,
       windowWidth: null,
-      hamburgerOpen: false
+      hamburgerOpen: false,
     }
   },
+
   mounted() {
     window.addEventListener('resize', this.checkScreen)
     this.checkScreen()
   },
+
   methods: {
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav
     },
+
     awayMobileNav() {
       this.mobileNav = false
     },
@@ -92,7 +92,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: $torea;
-  z-index: 99;
+  z-index: 2;
   width: 100%;
   height: 100px;
   position: fixed;
@@ -185,9 +185,19 @@ header {
 
     //logo
     .img {
-        margin-left: 20px;
+      margin-left: 10px;
       width: 100px;
       height: auto;
+    }
+
+    .img-mobile {
+      margin-left: 10px;
+      width: 100px;
+      height: auto;
+    }
+
+    .img-link {
+      height: 100px;
     }
 
     li {
@@ -201,8 +211,8 @@ header {
     }
     //burger menu
     .hamburger {
-        z-index: 1;
-    background-color: $torea;
+      z-index: 1;
+      background-color: $torea;
       position: relative;
       display: flex;
       height: 80px;
@@ -218,7 +228,7 @@ header {
         position: absolute;
         top: 32px;
         left: 20px;
-        background: $iron;
+        background-color: $iron;
         width: 40px;
         height: 4px;
         transition: transform 300ms ease-out;
@@ -240,8 +250,8 @@ header {
     }
     //mobile nav
     .dropdown-nav {
-        padding-top: 200px;
       display: flex;
+      align-items: center;
       flex-direction: column;
       position: fixed;
       width: 100%;
@@ -251,16 +261,16 @@ header {
       left: 0;
     }
     .btn-mobile {
-        color: $iron;
-        text-decoration: none;
-        font-size: 50px; 
+      color: $iron;
+      text-decoration: none;
+      font-size: 50px;
     }
     // animations
     .mobile-nav-enter-active {
-      animation: slideIn 1.5s;
+      animation: slideIn 1s;
     }
     .mobile-nav-leave-active {
-      animation: slideOut 1.5s;
+      animation: slideOut 2s;
     }
 
     @keyframes slideIn {
@@ -268,12 +278,12 @@ header {
         left: -800px;
       }
       to {
-        left: 0;
+        left: 0px;
       }
     }
     @keyframes slideOut {
       from {
-        left: 0;
+        left: 0px;
       }
       to {
         left: -800px;
