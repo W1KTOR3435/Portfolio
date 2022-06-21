@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header />
-      <vue-particles class="animated-background" />
+      <no-ssr>
+        <vue-particles class="animated-background" />
+      </no-ssr>
       <Nuxt />
     <Footer />
   </div>
