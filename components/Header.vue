@@ -34,10 +34,20 @@
           <Nuxt-link to="/" class="img-link">
             <img src="~/assets/logo.png" alt="logo" class="img-mobile" />
           </Nuxt-link>
-          <li>
+          <li
+            @click="
+              awayMobileNav()
+              hamburgerOpen = !hamburgerOpen
+            "
+          >
             <NuxtLink class="btn-mobile" to="/"> Home </NuxtLink>
           </li>
-          <li>
+          <li
+            @click="
+              awayMobileNav()
+              hamburgerOpen = !hamburgerOpen
+            "
+          >
             <NuxtLink class="btn-mobile" to="/contact"> Contact </NuxtLink>
           </li>
         </ul>
