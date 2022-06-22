@@ -76,9 +76,14 @@ export default {
 }
 
 .main__bot__btn {
+  margin-top: 50px;
   width: 80%;
   border: 2px solid $iron;
   background-color: transparent;
+
+  @media (max-width: 780px) {
+    margin-top: 0px;
+  }
 }
 
 .main__top__logo {

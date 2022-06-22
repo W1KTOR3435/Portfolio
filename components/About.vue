@@ -66,7 +66,7 @@ export default {
   max-height: 400px;
   //background-color: rgb(4, 6, 13, 0.5);
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1050px) {
     font-size: 25px;
     margin-bottom: 50px;
     background-color: transparent;
