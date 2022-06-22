@@ -30,7 +30,7 @@
         "
       />
       <transition name="mobile-nav">
-        <ul v-show="mobileNav" class="dropdown-nav">
+        <ul v-show="mobileNav" class="dropdown-nav" :class="overflowCheck()">
           <Nuxt-link to="/" class="img-link">
             <img src="~/assets/logo.png" alt="logo" class="img-mobile" />
           </Nuxt-link>
@@ -74,12 +74,22 @@ export default {
   },
 
   methods: {
+    overflowCheck(){
+      if(this.mobileNav){
+        document.querySelector('body').style.overflow = 'hidden'
+      }
+      else {
+        document.querySelector('body').style.overflow = 'auto'
+      }
+    },
+
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav
     },
 
     awayMobileNav() {
       this.mobileNav = false
+      
     },
 
     checkScreen() {
@@ -249,6 +259,10 @@ header {
         bottom: 32px;
       }
 
+      &:active {
+        background-color: transparent;
+      }
+
       &--is-open {
         &:before {
           transform: translateY(6px) rotate(135deg);
@@ -260,6 +274,7 @@ header {
     }
     //mobile nav
     .dropdown-nav {
+      overflow-y: hidden;
       display: flex;
       align-items: center;
       flex-direction: column;

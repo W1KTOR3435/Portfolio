@@ -5,9 +5,11 @@
     </div>
     <div class="main__bot">
       E-mail
-      <a href="mailto:wkow3435@gmail.com" target="_blank" class="main__bot__link">
-        <input type="button" class="main__bot__link__btn" value="Open"/>
-      </a>
+      <button type="button" class="main__bot__btn" value="Open">
+        <a href="mailto:wkow3435@gmail.com" target="_blank" class="main__bot__btn__link">
+          Open
+        </a>
+      </button>
     </div>
   </div>
 </template>
@@ -29,20 +31,20 @@ export default {
   width: 80%;
   height: 500px;
   max-width: 400px;
-  
+
   @media (max-width: 768px) {
     height: 400px;
   }
 }
 
-.main__top{
+.main__top {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main__bot{
+.main__bot {
   height: 100%;
   display: flex;
   align-items: center;
@@ -51,21 +53,39 @@ export default {
   font-size: 40px;
 }
 
-.main__bot__link{
+.main__bot__btn__link {
+  width: 100%;
+  height: 100%;
+  color: $iron;
   display: flex;
   justify-content: center;
   text-decoration: none;
-}
-
-.main__bot__link__btn{
-  width: 80%;
-  color: $iron;
-  border: 1px solid $iron;
   background-color: transparent;
   font-size: 30px;
+  transition: background-color 1s;
+
+  &:hover {
+    color: $royal;
+    background-color: $iron;
+  }
+
+  &:active {
+    color: $iron;
+    background-color: $torea;
+  }
+}
+
+.main__bot__btn {
+  width: 80%;
+  border: 2px solid $iron;
+  background-color: transparent;
 }
 
 .main__top__logo {
   width: 50%;
+
+   @media (max-width: 780px) {
+    padding-top: 50px;
+  }
 }
 </style>

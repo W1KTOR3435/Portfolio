@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="content__section-top">About me</div>
+    <h2 class="content__section-top">About me</h2>
     <div class="content__section-bot">
       <div class="content__section-bot__left">
         Hi, my name's Wiktor. My interest is learning practical IT skills mostly
@@ -49,7 +49,7 @@ export default {
   justify-items: center;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,19 +57,24 @@ export default {
 }
 
 .content__section-bot__left {
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
   font-size: 30px;
   color: $iron;
-  padding-left: 10px;
   max-height: 400px;
   //background-color: rgb(4, 6, 13, 0.5);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     font-size: 25px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
+    background-color: transparent;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin-bottom: 50px;
     background-color: transparent;
   }
 }
@@ -84,6 +89,7 @@ export default {
 }
 
 .img {
-    width: 70%;
+  width: 70%;
+  max-height: 400px;
 }
 </style>

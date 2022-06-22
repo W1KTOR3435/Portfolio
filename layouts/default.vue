@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header />
       <no-ssr>
+        <Header />
         <vue-particles class="animated-background" />
       </no-ssr>
       <Nuxt />
@@ -22,6 +22,7 @@ export default { components: { Header, Footer } }
 *,
 html,
 body {
+  -webkit-tap-highlight-color: transparent;
   margin: 0px;
   padding: 0px;
   font-family: $space-mono;

@@ -1,11 +1,7 @@
 <template>
   <div class="content">
-    <div class="head__text name-text">
-        Wiktor Kowalczyk
-    </div>
-    <div class="head__text heading-text">
-        Frontend Developer
-    </div>
+    <h1 class="head__text name-text">Wiktor Kowalczyk</h1>
+    <h2 class="head__text heading-text">Frontend Developer</h2>
   </div>
 </template>
 
